@@ -10,7 +10,7 @@ export default class Model {
   }
 
   get musicOn() {
-    return this._musicOn
+    return this._musicOn;
   }
 
   set soundOn(value) {
@@ -22,7 +22,7 @@ export default class Model {
   }
 
   set bgMusicPlaying(value) {
-    this._bgMusicPlaying = value
+    this._bgMusicPlaying = value;
   }
 
   get bgMusicPlaying() {

@@ -1,4 +1,4 @@
-import Entity from "./Entities";
+import Entity from './Entities';
 
 export default class EnemyLaser extends Entity {
   constructor(scene, x, y, laser = 'laser-enemy') {

@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
@@ -7,14 +7,14 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TreserJSPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var SRC = path.resolve(__dirname, 'src/assets');
+const SRC = path.resolve(__dirname, 'src/assets');
 
 module.exports = {
   entry: [path.resolve('src', 'index.js')],
-  mode: "development",
+  mode: 'development',
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, 'dist')
+    path: path.join(__dirname, 'dist'),
   },
   optimization: {
     minimizer: [new TreserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
@@ -36,8 +36,8 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: '/\.m?js$/',
@@ -45,9 +45,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -55,16 +55,16 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: process.env.NODE_ENV === 'development'
-            }
+              hmr: process.env.NODE_ENV === 'development',
+            },
           },
           'css-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: [/\.vert$/, /\.frag$/],
-        use: "raw-loader"
+        use: 'raw-loader',
       },
       {
         test: /\.(jpe?g|png|gif|svg|xml)$/,
@@ -72,10 +72,10 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[ext]'
-            }
-          }
-        ]
+              name: 'assets/[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.(woff(2)?|ttf|eot|)(\?v=\d+\.\d+\.\d+)?$/,
@@ -83,25 +83,25 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/fonts/[hash]-[name].[ext]'
-            }
-          }
-        ]
+              name: 'assets/fonts/[hash]-[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.(mp3|flac)$/,
         include: SRC,
-        loader: 'file-loader'
-      }
-    ]
+        loader: 'file-loader',
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[styles].css',
-      chunkFilename: '[id].css'
+      chunkFilename: '[id].css',
     }),
     new BrowserSyncPlugin({
       host: 'localhost',
@@ -111,13 +111,13 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: 'src/assets',
-        to: 'assets'
-      }
+        to: 'assets',
+      },
     ]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       CANVAS_RENDERER: JSON.stringify(true),
-      WEBGL_RENDERER: JSON.stringify(true)
+      WEBGL_RENDERER: JSON.stringify(true),
     }),
-  ]
-}
+  ],
+};

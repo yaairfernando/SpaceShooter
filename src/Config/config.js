@@ -6,14 +6,14 @@ export default {
   width: 1000,
   height: 600,
   physics: {
-    default: "arcade",
+    default: 'arcade',
     arcade: {
       gravity: {
         x: 0,
-        y: 0
-      }
-    }
+        y: 0,
+      },
+    },
   },
   pixelArt: true,
-  roundPixels: true
-}
+  roundPixels: true,
+};

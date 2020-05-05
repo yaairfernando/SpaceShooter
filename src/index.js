@@ -1,14 +1,14 @@
-import Phaser from "phaser";
+import Phaser from 'phaser';
 import config from './Config/config';
 import GameScene from './Scenes/GameScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 import MenuScene from './Scenes/MenuScene';
 import OptionsScene from './Scenes/OptionsScene';
 import GameOver from './Scenes/GameOver';
-import './Styles/Styles.scss'
-import Model from "./Model";
+import './Styles/Styles.scss';
+import Model from './Model';
 import PlayerScore from './Objects/PlayerScore';
-import LeaderBoard from './Scenes/LeaderBoard'
+import LeaderBoard from './Scenes/LeaderBoard';
 
 class Game extends Phaser.Game {
   constructor() {

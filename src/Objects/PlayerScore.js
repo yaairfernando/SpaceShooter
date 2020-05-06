@@ -4,7 +4,7 @@ import { getBoardHTML } from '../Util/DOM';
 export default class PlayerScore {
   constructor(scene) {
     this.scene = scene;
-    this.id = 'eFTPsewuS1FDOkrhwkBr',
+    this.id = 'eFTPsewuS1FDOkrhwkBr';
     this.player_score = 0;
     this.scores = [];
     this.getPlayerScore();
@@ -40,7 +40,8 @@ export default class PlayerScore {
         await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${this.id}/scores/`, init);
         this.player_score = 0;
       } catch (error) {
-        console.log(error);
+        this.player_score = 0;
+        throw error;
       }
     }
   }
@@ -61,7 +62,8 @@ export default class PlayerScore {
         return 0;
       });
     } catch (error) {
-      console.log(error);
+      this.scores = [];
+      throw error;
     }
   }
 

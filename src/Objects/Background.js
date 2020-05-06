@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+/* eslint func-names: ["error", "never"] */
+
 export default class Background {
   constructor(scene, key, velocityY) {
     this.scene = scene;

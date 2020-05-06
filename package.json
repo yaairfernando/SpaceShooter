@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "concurrently --kill-others npm:webpackbuild",
+    "webpackbuild": "npm run clean && webpack --mode=development --watch",
     "build": "webpack --mode production",
     "clean": "rimraf dist",
     "start": "node server.js",

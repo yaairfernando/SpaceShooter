@@ -1,7 +1,10 @@
 const getBoardHTML = (scores) => {
   let html = '';
-  for (const score of scores) {
-    html += `<span>${score.user} : ${score.score}</span><br/>`;
+  // for (const score of scores) {
+  //   html += `<span>${score.user} : ${score.score}</span><br/>`;
+  // }
+  for (let i = 0; i < scores.length; i += 1) {
+    html += `<span>${scores[i].user} : ${scores[i].score}</span><br/>`;
   }
   const div = document.createElement('div');
   div.classList.add('leader-board');

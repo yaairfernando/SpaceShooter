@@ -48,7 +48,14 @@ export default class OptionsScene extends Phaser.Scene {
     this.menuButton = new Button(this, 500, 530, 'button2', 'button', 'Menu', 'Menu');
     const container = this.add.container(0, -20);
     container.height = 200;
-    container.add([square, this.text, this.musicButton, this.musicText, this.soundButton, this.soundText]);
+    container.add([
+      square,
+      this.text,
+      this.musicButton,
+      this.musicText,
+      this.soundButton,
+      this.soundText,
+    ]);
     this.updateAudio();
   }
 

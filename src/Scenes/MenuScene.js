@@ -5,6 +5,8 @@ import Background from '../Objects/Background';
 import { getByClass } from '../Util/DOM';
 import { hideForm } from '../API/Form';
 
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["hideLeaderBoard"] }] */
+
 export default class TitleScene extends Phaser.Scene {
   constructor() {
     super('Menu');
@@ -22,7 +24,6 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   preload() {
-    console.log('Menu Scene');
     hideForm();
     this.load.image('space', 'assets/space.svg');
     this.load.image('stars', 'assets/stars.png');
@@ -55,9 +56,10 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   addPlanet(target, duration, ease, delay) {
-    target.y = -300;
+    const t = target;
+    t.y = -300;
     this.tweens.add({
-      targets: target,
+      targets: t,
       y: 1000,
       duration,
       ease,

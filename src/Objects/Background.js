@@ -1,3 +1,5 @@
+import Phaser from 'phaser';
+
 export default class Background {
   constructor(scene, key, velocityY) {
     this.scene = scene;

@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import Background from '../Objects/Background';
 import Player from '../Objects/Player';
 import GunShip from '../Objects/GunShip';

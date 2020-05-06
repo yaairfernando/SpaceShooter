@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import Button from '../Objects/Buttons';
 import Background from '../Objects/Background';
 

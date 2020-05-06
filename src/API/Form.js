@@ -1,4 +1,5 @@
 import { getFormHTML, getById } from '../Util/DOM';
+import 'regenerator-runtime/runtime';
 
 let that;
 

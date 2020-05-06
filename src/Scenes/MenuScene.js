@@ -7,7 +7,7 @@ import { hideForm } from '../API/Form';
 
 /* eslint class-methods-use-this: ["error", { "exceptMethods": ["hideLeaderBoard"] }] */
 
-export default class TitleScene extends Phaser.Scene {
+export default class MenuScene extends Phaser.Scene {
   constructor() {
     super('Menu');
   }

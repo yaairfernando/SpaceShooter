@@ -4,14 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "concurrently --kill-others npm:webpackbuild",
+    "webpackbuild": "npm run clean && webpack --mode=development --watch",
     "build": "webpack --mode production",
     "clean": "rimraf dist",
     "start": "node server.js",
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "webpack -p",
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "setupFiles": ["jest-canvas-mock"],
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
   "dependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.6",
@@ -19,9 +35,11 @@
     "babel-preset-minify": "^0.5.1",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
+    "canvas": "^2.6.1",
     "clean-webpack-plugin": "^3.0.0",
     "concurrently": "^5.1.0",
     "css-loader": "^3.5.2",
+    "express": "^4.17.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
     "image-webpack-loader": "^6.0.0",
@@ -29,6 +47,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "phaser": "^3.23.0",
+    "regenerator-runtime": "^0.13.5",
     "rimraf": "^3.0.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
@@ -38,15 +57,16 @@
     "wait-on": "^4.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-middleware": "^3.7.2",
-    "regenerator-runtime": "^0.13.5",
-    "express": "^4.17.1"
+    "webpack-dev-middleware": "^3.7.2"
   },
   "devDependencies": {
+    "babel-jest": "^25.4.0",
     "copy-webpack-plugin": "^5.1.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.4.0",
+    "jest-canvas-mock": "^2.2.0",
     "webpack-dev-middleware": "^3.7.2"
   }
 }

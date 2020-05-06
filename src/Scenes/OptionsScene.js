@@ -9,7 +9,7 @@ export default class OptionsScene extends Phaser.Scene {
 
   getBackground() {
     this.backgrounds = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i += 1) {
       const keys = ['space'];
       const key = keys[Phaser.Math.Between(0, keys.length - 1)];
       const bg = new Background(this, key, i * 10);

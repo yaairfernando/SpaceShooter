@@ -37,7 +37,7 @@ export default class GameScene extends Phaser.Scene {
 
   getEnemiesByType(type) {
     const arr = [];
-    for (let i = 0; i < this.enemies.getChildren().length; i++) {
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
       if (enemy.getData('type') === type) {
         arr.push(enemy);
@@ -91,7 +91,7 @@ export default class GameScene extends Phaser.Scene {
     };
 
     this.backgrounds = [];
-    for (let i = 0; i < 5; i++) { // create five scrolling backgrounds
+    for (let i = 0; i < 5; i += 1) { // create five scrolling backgrounds
       const bg = new Background(this, 'space', i * 10);
       this.backgrounds.push(bg);
     }
@@ -203,7 +203,7 @@ export default class GameScene extends Phaser.Scene {
       }
     }
 
-    for (var i = 0; i < this.enemies.getChildren().length; i++) {
+    for (var i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
 
       enemy.update();
@@ -221,7 +221,7 @@ export default class GameScene extends Phaser.Scene {
       }
     }
 
-    for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
+    for (var i = 0; i < this.enemyLasers.getChildren().length; i += 1) {
       var laser = this.enemyLasers.getChildren()[i];
       laser.update();
 
@@ -235,7 +235,7 @@ export default class GameScene extends Phaser.Scene {
       }
     }
 
-    for (var i = 0; i < this.playerLasers.getChildren().length; i++) {
+    for (var i = 0; i < this.playerLasers.getChildren().length; i += 1) {
       var laser = this.playerLasers.getChildren()[i];
       laser.update();
 

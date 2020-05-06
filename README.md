@@ -25,7 +25,7 @@
   </p>
 </p>
 <br/>
-<a target="_blank" href="https://spaceshooterwar.herokuapp.com/">Live Version</a>
+<a target="_blank" href="https://spaceshooterwar.herokuapp.com/">Live Version Here</a>
 
 
 

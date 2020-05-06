@@ -1,9 +1,11 @@
-import 'phaser';
+import Phaser from 'phaser';
 import config from '../Config/config';
 import Button from '../Objects/Buttons';
 import Background from '../Objects/Background';
 import { getByClass } from '../Util/DOM';
 import { hideForm } from '../API/Form';
+
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["hideLeaderBoard"] }] */
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
@@ -35,7 +37,7 @@ export default class TitleScene extends Phaser.Scene {
 
   addBackground() {
     this.backgrounds = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i = 1) {
       const keys = ['space', 'stars'];
       const key = keys[Phaser.Math.Between(0, keys.length - 1)];
       const bg = new Background(this, key, i * 10);

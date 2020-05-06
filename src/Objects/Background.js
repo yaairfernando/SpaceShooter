@@ -1,3 +1,7 @@
+import Phaser from 'phaser';
+
+/* eslint func-names: ["error", "never"] */
+
 export default class Background {
   constructor(scene, key, velocityY) {
     this.scene = scene;
@@ -5,7 +9,7 @@ export default class Background {
     this.velocityY = velocityY;
     this.layers = this.scene.add.group();
     this.createLayers = function () {
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 2; i += 1) {
         // creating two backgrounds will allow a continuous scroll
         const layer = this.scene.add.sprite(0, 0, this.key);
         layer.y = (layer.displayHeight * i);
@@ -22,7 +26,7 @@ export default class Background {
     this.createLayers();
     this.update = function () {
       if (this.layers.getChildren()[0].y > 0) {
-        for (let i = 0; i < this.layers.getChildren().length; i++) {
+        for (let i = 0; i < this.layers.getChildren().length; i += 1) {
           const layer = this.layers.getChildren()[i];
           layer.y = (-layer.displayHeight) + (layer.displayHeight * i);
         }

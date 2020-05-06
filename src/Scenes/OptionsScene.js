@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import Button from '../Objects/Buttons';
 import Background from '../Objects/Background';
 
@@ -9,7 +9,7 @@ export default class OptionsScene extends Phaser.Scene {
 
   getBackground() {
     this.backgrounds = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i += 1) {
       const keys = ['space'];
       const key = keys[Phaser.Math.Between(0, keys.length - 1)];
       const bg = new Background(this, key, i * 10);
@@ -48,7 +48,13 @@ export default class OptionsScene extends Phaser.Scene {
     this.menuButton = new Button(this, 500, 530, 'button2', 'button', 'Menu', 'Menu');
     const container = this.add.container(0, -20);
     container.height = 200;
-    container.add([square, this.text, this.musicButton, this.musicText, this.soundButton, this.soundText]);
+    container.add([square,
+      this.text,
+      this.musicButton,
+      this.musicText,
+      this.soundButton,
+      this.soundText,
+    ]);
     this.updateAudio();
   }
 

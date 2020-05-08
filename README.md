@@ -44,6 +44,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+Space shooter game that includes a leaderboard for player's scores and options to enable or disable the audio.
+
 ![Screenshot Image](src/assets/intro.gif)
 
 ### Built With

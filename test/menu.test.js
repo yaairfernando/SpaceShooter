@@ -54,4 +54,16 @@ describe('Player', () => {
     }
     expect(game.globals.playerScore.player_score).toEqual(80);
   });
+
+  test('score should be reseted after submiting the score', () => {
+    game.globals.playerScore.resetScore();
+    let i = 0;
+    while (i < 5) {
+      game.globals.playerScore.updateScore();
+      i += 1;
+    }
+    expect(game.globals.playerScore.player_score).toEqual(50);
+    game.globals.playerScore.submitScore('Yair');
+    expect(game.globals.playerScore.player_score).toEqual(0);
+  });
 });

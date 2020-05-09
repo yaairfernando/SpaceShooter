@@ -57,7 +57,6 @@ const onFormSubmit = (e) => {
   }
 };
 
-
 const showForm = (t) => {
   const html = getFormHTML();
   if (!getById('form')) {

@@ -21,6 +21,7 @@ export default class GameScene extends Phaser.Scene {
     this.load.image('laser-enemy', 'assets/spaceships/laser-enemy.png');
     this.load.image('torpedo', 'assets/spaceships/torpedo.png');
     this.load.image('laser-player', 'assets/spaceships/laser-player.png');
+    this.load.image('bullet', 'assets/bullet.png');
 
     this.load.audio('laser', 'assets/audio/laser.wav');
     this.load.audio('explode', 'assets/audio/explode.wav');

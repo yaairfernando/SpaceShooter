@@ -129,10 +129,10 @@ user@pc:~$ npm run test
 ![Screenshot Image](src/assets/logo.jpg)
 
 - Github: [@YairFernando67](https://github.com/YairFernando67)
-- Twitter: [@YairFernando18](https://twitter.com/YairFernando18)
+- Twitter: [@yairfernandof](https://twitter.com/yairfernandof)
 - Linkedin: [softwaredeveloperyairfacio](https://www.linkedin.com/in/softwaredeveloperyairfacio/)
 - Email: [yair.facio11@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=yair.facio11@gmail.com)
-- Portfolio: [softwaredeveloper](https://yairfernando67.github.io/Portfolio/)
+- Portfolio: [softwaredeveloper](https://yairfernando.herokuapp.com/)
 
 <p align="center">
 
